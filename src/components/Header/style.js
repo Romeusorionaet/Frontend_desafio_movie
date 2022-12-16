@@ -19,13 +19,9 @@ export const Container = styled.header`
     border-bottom-color: ${({theme})=>theme.COLORS.BACKGROUND_LINE};
 
     >h1{
-        width: 164px;   
-        height: 32px;
-
-        margin-right: 64px;
-        margin-left: 120px;
-        margin-bottom: 25px;
-
+        font-size: clamp(20px, 26px, 4vw);
+        margin: 0 0 10px 120px;
+        
         color: ${({theme})=>theme.COLORS.PINK_500};
     }
 `;
@@ -40,7 +36,7 @@ export const Profile = styled.div`
     justify-content: center;
     align-items: center;
 
-    margin-right: 120px;
+    margin-right: 140px;
     margin-left: 20px;
 
     >div{
