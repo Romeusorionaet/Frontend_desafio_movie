@@ -13,7 +13,7 @@
 
 ![preview](./src/assets/previewReadme2.png)
 
-[😊⭐⭐Clique aqui para acessar⭐⭐😊](https://romeusorionaet.github.io/RocketMovie/)
+[😊⭐⭐Clique aqui para acessar⭐⭐😊](https://rocket-movie.vercel.app)
 
 # Tecnologias utilizadas
 - HTML
