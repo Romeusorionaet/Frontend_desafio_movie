@@ -6,3 +6,9 @@
     background: #FF859B; 
     border-radius: 10px;
 }
+
+@media (max-width: 670px) {
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}

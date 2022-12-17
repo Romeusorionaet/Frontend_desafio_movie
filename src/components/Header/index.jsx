@@ -8,7 +8,9 @@ export function Header() {
     return(
         <Container>
             <h1>RocketMovies</h1>
-            <Input placeholder="Pesquisar pelo título" />
+            <div className="wrapper_input">
+                <Input placeholder="Pesquisar pelo título" />
+            </div>
     
             <Profile>
                 <div>

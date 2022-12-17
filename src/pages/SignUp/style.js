@@ -4,6 +4,11 @@ import backgroundImg from '../../assets/sidePreview.png';
 export const Container = styled.div`
     display: flex;
     height: 100vh;
+
+    @media (max-width: 670px){
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 export const Form = styled.form`
@@ -47,10 +52,18 @@ export const Form = styled.form`
         color: ${({theme})=>theme.COLORS.PINK_500}; 
         margin: 0 10px;
     }
+
+    @media (max-width: 670px){
+        margin: 200px 0;
+    }
 `;
 
 export const Background= styled.div`
     flex: 1;
     background: url(${backgroundImg}) no-repeat center center;
     background-size: cover;
+
+    @media (max-width: 670px){
+        background: none;
+    }
 `;

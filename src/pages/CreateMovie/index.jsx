@@ -32,8 +32,17 @@ export function CreateMovie() {
 
             <Section title="Marcadores">
                 <div className="Tags">
-                    <NoteItem value="React" />
                     <NoteItem isNew placeholder="Novo marcador" />
+                    <NoteItem value="React" />
+                    <NoteItem value="React" />
+                    <NoteItem value="React" />
+                    <NoteItem value="React" />
+                    <NoteItem value="React" />
+                    <NoteItem value="React" />
+                    <NoteItem value="React" />
+                    <NoteItem value="React" />
+                    <NoteItem value="React" />
+                    <NoteItem value="React" />
                 </div>
             </Section>
 

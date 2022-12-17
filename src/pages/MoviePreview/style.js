@@ -13,6 +13,13 @@ export const Container = styled.div`
             color: ${({theme})=>theme.COLORS.PINK_500};
         }
     }
+
+    @media (max-width: 670px){
+        .ButtonTurnBack{
+            margin-top: -130px;
+            margin-left: 10px;
+        }
+    }
 `;
 
 export const Section = styled.section`
@@ -74,5 +81,16 @@ export const Section = styled.section`
        gap: 25px;
 
        text-align: justify;
+   }
+
+   @media (max-width: 670px){
+        margin: 20px;
+
+        .wrapper_text{
+            background-color: ${({theme})=>theme.COLORS.BACKGROUND_100};
+            padding: 10px;
+            height: 580px;
+            overflow: auto;
+        }
    }
 `;

@@ -41,6 +41,10 @@ export const Content = styled.div`
             color: ${({theme})=>theme.COLORS.GRAY_100};
         }
     }
+
+    @media (max-width: 670px){
+        margin: 50px 10px;
+    }
 `;
 
 export const NewMovie = styled(Link)`
@@ -56,4 +60,9 @@ export const NewMovie = styled(Link)`
 
     color: ${({theme})=>theme.COLORS.GRAY_100};
     background-color: ${({theme})=>theme.COLORS.PINK_500};
+
+    @media (max-width: 670px){
+        width: auto;
+        padding: 5px;
+    }
 `;

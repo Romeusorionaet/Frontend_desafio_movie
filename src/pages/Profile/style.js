@@ -16,6 +16,12 @@ export const Container = styled.div`
             color: ${({theme})=>theme.COLORS.PINK_500};
         }
     }
+
+    @media (max-width: 670pc){
+        .ButtonTurnBack{
+            margin-left: 10px;
+        }
+    }
 `;
 
 export const Form = styled.form`
@@ -42,6 +48,16 @@ export const Form = styled.form`
 
     >Button{
         width: 100%;
+    }
+
+    >.social{
+        display: flex;
+        gap: 15px;
+    }
+
+    >.social svg{
+        font-size: 25px;
+        color: ${({theme})=>theme.COLORS.PINK_500};
     }
 `;
 

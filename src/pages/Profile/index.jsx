@@ -3,7 +3,9 @@ import {
     UserOutlined, 
     MailOutlined, 
     LockOutlined, 
-    CameraOutlined
+    CameraOutlined,
+    InstagramFilled,
+    GithubFilled
 } from '@ant-design/icons';
 
 import {Link} from 'react-router-dom';
@@ -62,6 +64,12 @@ export function Profile() {
                 </div>
 
                 <Button  title="Enviar" />
+
+                <div className="social">
+                    <a target="_blank" href="https://github.com/Romeusorionaet">
+                        <GithubFilled />
+                    </a>
+                </div>
             </Form>
         </Container>
     )

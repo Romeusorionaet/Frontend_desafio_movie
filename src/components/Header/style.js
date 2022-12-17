@@ -18,11 +18,26 @@ export const Container = styled.header`
     border-bottom-style: solid;
     border-bottom-color: ${({theme})=>theme.COLORS.BACKGROUND_LINE};
 
+    .wrapper_input{
+        width: 100%;
+    }
+
     >h1{
         font-size: clamp(20px, 26px, 4vw);
-        margin: 0 0 10px 120px;
+        margin: 0 0 10px 6vw;
         
         color: ${({theme})=>theme.COLORS.PINK_500};
+    }
+
+    @media (max-width: 670px){
+        position: relative;
+        flex-direction: column;
+        gap: 40px;
+
+        .wrapper_input{
+            width: 50%;
+            margin: -30px 200px 0 0;
+        }
     }
 `;
 
@@ -36,7 +51,7 @@ export const Profile = styled.div`
     justify-content: center;
     align-items: center;
 
-    margin-right: 140px;
+    margin-right: 8vw;
     margin-left: 20px;
 
     >div{
@@ -57,5 +72,18 @@ export const Profile = styled.div`
         width: 56px;
         height: 56px;
         border-radius: 50%;
+    }
+
+    @media (max-width: 670px){
+        position: absolute;
+        top: 45px;
+        right: 1vh;
+
+        >div a{
+            margin-left: 80%;
+        }
+        >div h2{
+            margin-left: 48%;
+        }
     }
 `;
