@@ -13,7 +13,10 @@ export const Container = styled.div`
   
    .wrapperSerie{
       display: flex;
+      gap: 5px;
       flex-direction: column;
+
+      margin-top: 10px;
    }
 
    >a:hover{

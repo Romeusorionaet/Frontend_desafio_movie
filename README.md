@@ -2,16 +2,16 @@
 
 > Página front-end com aplicação <strong>react.js</strong>
 
-![preview](./src/assets/previewReadme.png)
+![preview](./src/assets/preview1.png)
 
-> A ideia é mostrar notas de filmes que o usuário cadastre em uma lista, podendo ter:
+> A ideia é mostrar notas de filmes ou serie que o usuário cadastre em uma lista, podendo ter:
 
 - Título
 - Nota de avaliação
 - Observação 
 - Tags
 
-![preview](./src/assets/previewReadme2.png)
+![preview](./src/assets/preview2.png)
 
 [😊⭐⭐Clique aqui para acessar⭐⭐😊](https://rocket-movie.vercel.app)
 

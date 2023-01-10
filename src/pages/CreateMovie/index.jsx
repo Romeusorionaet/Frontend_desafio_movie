@@ -182,7 +182,7 @@ export function CreateMovie() {
 
             <div className="ButtonsDelAndSave">
                 <Button title="Limpar nota" onClick={handleReset} />
-                <Button title="Salvar alterações" onClick={handleNewNote} />
+                <Button title="Salvar nota" onClick={handleNewNote} />
             </div>
         </Container>
     )

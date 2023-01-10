@@ -19,7 +19,7 @@ export function Header() {
     
     return(
         <Container>
-            <h1>Filmes e Series</h1>
+            <h1>RocketMovie</h1>
             <Profile>
                 <div>
                     <h2>{user.name}</h2>

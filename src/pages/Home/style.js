@@ -29,12 +29,11 @@ export const Container = styled.div`
 
         .containerNotes{
             margin-top: 50px;
+            width: 100%;
             display: flex;
             flex-direction: column;
 
             .title{
-                
-
                 text-align: start;
                 font-style: italic;
                 font-size: 26px;

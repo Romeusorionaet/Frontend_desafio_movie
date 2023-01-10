@@ -71,6 +71,7 @@ export const Section = styled.section`
         margin: 30px 0; 
 
         display: flex;
+        flex-wrap: wrap;
         gap: 20px;
 
     span{
