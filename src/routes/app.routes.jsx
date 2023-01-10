@@ -8,10 +8,10 @@ import {Home} from '../pages/Home';
 export function AppRoutes() {
     return(
         <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/moviePreview" element={<MoviePreview />} />
+            <Route path="/moviePreview/:id" element={<MoviePreview />} />
             <Route path="/createMovie" element={<CreateMovie />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/" element={<Home />} />
         </Routes>
     )
 }

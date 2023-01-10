@@ -1,95 +1,136 @@
-import {ArrowLeftOutlined, StarOutlined, StarFilled} from '@ant-design/icons';
+import {ArrowLeftOutlined} from '@ant-design/icons';
 import {RxStopwatch} from 'react-icons/rx';
-import {Link} from 'react-router-dom';
+import {FaTrash} from 'react-icons/fa'
+
+import {useState, useEffect} from 'react';
+import {api} from '../../services/api';
+import {useParams, useNavigate} from 'react-router-dom';
 
 import {Header} from '../../components/Header';
+import {Stars} from "../../components/Stars";
+import {Tags} from "../../components/Tags";
+import {useAuth} from '../../hooks/auth';
+import avatarPlaceholder from '../../assets/avatar_placeholder.png';
 
-import {Container, Section} from './style';
+import {Container, Section, Trash} from './style';
+
+function formattingDateAndTime(datetime) {
+    
+    const [date, time] = datetime.split(" ")
+    const [yyyy, mm, dd] = date.split("-")
+    const dateFormatted = `${dd}/${mm}/${yyyy}`
+    const [hour, minutes] = time.split(":")
+    const newHour = hour - 3
+    const hourFormatted = `${newHour}:${minutes}`
+    
+    return {dateFormatted, hourFormatted}
+  }
 
 export function MoviePreview() {
+    const [data, setData] = useState(null);
+    
+    const {user} = useAuth(); 
+    const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
+
+    const params = useParams();
+    const navigate = useNavigate();
+
+    function handleBack(){
+      navigate(-1);
+    }
+
+    async function handleRemove(){
+      const confirm = window.confirm("Deseja realmente remover a nota?");
+  
+      if(confirm){
+        await api.delete(`/notes/${params.id}`);
+        handleBack();
+      }
+    }
+    
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await api.get(`/notes/${params.id}`);
+        setData(response.data);
+      } catch (error) {
+        if (error.response) {
+          alert(error.response.data.message);
+        } else {
+          alert(
+            "Não foi possível carregar esta nota."
+          );
+          navigate(-1);
+          console.log(error);
+        }
+      }
+    }
+    fetchData();
+  }, []);
+
     return(
         <Container>
             <Header />
-            <div className="ButtonTurnBack">
-                <ArrowLeftOutlined />
-                <Link to="/">
-                    Voltar
-                </Link>
+            
+            <div className='wrapper'>
+              <div className="ButtonTurnBack">
+                  <ArrowLeftOutlined />
+                  <a onClick={handleBack}>
+                      Voltar
+                  </a>
+              </div>
+              <Trash onClick={handleRemove}>
+                <FaTrash />
+              </Trash>
             </div>
-            <Section>
+            
+            {data &&
+              <Section>
                 <div className="wrapper_stars">
-                    <h1>Interestellar</h1>
+                  <h1>{data.title}</h1>
+            
                     <div>
-                        <StarFilled />
-                        <StarFilled />
-                        <StarFilled />
-                        <StarFilled />
-                        <StarOutlined />
+                        <Stars rating={data.rating} />
                     </div>
                 </div>
                 <div className="wrapper_span">
                     <div>
                         <img 
                             className="userImg"
-                            src="https://github.com/romeusorionaet.png"
+                            src={avatarUrl}
                             alt="Foto do usuário"
                         />
-                        <span>Por Romeu Soares</span>
+                        <span>Por {user.name}</span>
                     </div>
                     <div>
                         <RxStopwatch />
-                        <span>23/05/22</span>
+                        <span>{formattingDateAndTime(data.created_at).dateFormatted}</span>
                         <span>às</span>
-                        <span>08:00</span>
+                        <span>{formattingDateAndTime(data.created_at).hourFormatted}</span>
                     </div>
-
                 </div>
                 <div className="tags_spans">
-                    <span>Ficção Cientifica</span>
-                    <span>Drama</span>
-                    <span>Família</span>
+                  {data.tags.map(tag=>(
+                    <Tags 
+                    key={String(tag.id)} 
+                    title={tag.name} 
+                    />
+                  ))}
                 </div>
+                
+                {data.season &&
+                  <div className='wrapperSerie'>
+                  <span>Temporada:</span>
+                  {data.season}
+                  <span>Episódio:</span>
+                  {data.episode}
+                  </div>
+                }
 
                 <div className="wrapper_text">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem assumenda
-                        ipsam, quod, facere et harum a culpa esse officia at voluptatibus inventore commodi recusandae? 
-                        Fuga consequuntur non accusamus fugiat repellendus.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem assumenda
-                        ipsam, quod, facere et harum a culpa esse officia at voluptatibus inventore commodi recusandae? 
-                        Fuga consequuntur non accusamus fugiat repellendus.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem assumenda
-                        ipsam, quod, facere et harum a culpa esse officia at voluptatibus inventore commodi recusandae? 
-                        Fuga consequuntur non accusamus fugiat repellendus.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem assumenda
-                        ipsam, quod, facere et harum a culpa esse officia at voluptatibus inventore commodi recusandae? 
-                        Fuga consequuntur non accusamus fugiat repellendus.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem assumenda
-                        ipsam, quod, facere et harum a culpa esse officia at voluptatibus inventore commodi recusandae? 
-                        Fuga consequuntur non accusamus fugiat repellendus.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem assumenda
-                        ipsam, quod, facere et harum a culpa esse officia at voluptatibus inventore commodi recusandae? 
-                        Fuga consequuntur non accusamus fugiat repellendus.
-                    </p>
-
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo 
-                        obcaecati consequuntur modi soluta et quidem hic tenetur quae, velit 
-                        praesentium, ducimus voluptatum nihil aperiam saepe itaque porro facere! 
-                        Laudantium, itaque!
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo 
-                        obcaecati consequuntur modi soluta et quidem hic tenetur quae, velit 
-                        praesentium.
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo 
-                        obcaecati consequuntur modi soluta et quidem hic tenetur quae, velit 
-                        praesentium, ducimus voluptatum nihil aperiam saepe itaque porro facere! 
-                        Laudantium, itaque!
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo 
-                        obcaecati consequuntur modi soluta et quidem hic tenetur quae, velit 
-                        praesentium.
-                    </p>
+                    <p>{data.description}</p>
                 </div>
-            </Section>
+            </Section>}
         </Container>
     )
 }

@@ -90,13 +90,55 @@ export const Form = styled.form`
 
     >div{
         display: flex;
-        gap: 40px;
+        gap: 20px;
     }
+
+    .wrapperSeries{
+        display: flex;
+        justify-content: space-between;
+
+        >div{
+            width: 50%;
+        }
+    }
+
     >TextArea, Input{
         border-radius: 10px;
     }
 
     @media (max-width: 670px){
         padding: 40px 10px;
+    }
+`;
+
+export const Buttons = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    width: 300px;
+
+    position: absolute;
+    top: 150px;
+    right: 80px;
+
+
+    >label{
+        display: flex;
+        justify-content: center;
+    }
+
+    >label input{
+        margin-right: 5px;
+        width: 20px;
+        height: 20px;
+        background-color: ${({theme})=>theme.COLORS.PINK_100};
+        color: ${({theme})=>theme.COLORS.GRAY_500};
+    }
+    
+    >input:hover{
+        background: none;
+    }
+
+    @media (max-width: 670px){
+        right: -30px;
     }
 `;

@@ -11,6 +11,7 @@ export const Container = styled.header`
     display: flex;
     gap: 64px;
     align-items: center;
+    justify-content: space-between;
 
     background-color: ${({theme})=>theme.COLORS.BACKGROUND_900};
 
@@ -52,19 +53,21 @@ export const Profile = styled.div`
     align-items: center;
 
     margin-right: 8vw;
-    margin-left: 20px;
 
     >div{
         min-width: 100%;
 
         h2{
+            display: flex;
+            justify-content: end;
+            padding-right: 10px;
             font-weight: 700;
             font-size: 14px;
             line-height: 18px;
             color: ${({theme})=>theme.COLORS.WHITE_500};
         }
         a{
-            margin-left: 55%;
+            margin-left: 80%;
             color: ${({theme})=>theme.COLORS.GRAY_500};
         }
     }
@@ -78,6 +81,7 @@ export const Profile = styled.div`
         position: absolute;
         top: 45px;
         right: 1vh;
+        padding-bottom: 20px;
 
         >div a{
             margin-left: 80%;

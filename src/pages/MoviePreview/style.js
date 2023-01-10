@@ -1,13 +1,19 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    >.ButtonTurnBack{
+
+    .wrapper{
+        display: flex;
+        justify-content: space-between;
+
+        margin: 0 120px;
+        padding-top: 150px;
+    }
+
+    .ButtonTurnBack{
         display: flex;
         align-items: center;
-        gap: 10px;
-
-        padding-top: 150px;
-        margin-left: 120px;
+        gap: 10px;  
 
         svg, a{
             color: ${({theme})=>theme.COLORS.PINK_500};
@@ -15,9 +21,9 @@ export const Container = styled.div`
     }
 
     @media (max-width: 670px){
-        .ButtonTurnBack{
-            margin-top: -130px;
-            margin-left: 10px;
+        .wrapper{
+            margin: -130px 20px 0 20px;
+            
         }
     }
 `;
@@ -80,17 +86,38 @@ export const Section = styled.section`
        flex-direction: column;
        gap: 25px;
 
+       border-top: 1px solid ${({theme})=>theme.COLORS.PINK_500};
+       background-color: ${({theme})=>theme.COLORS.BACKGROUND_100};
+       border-radius: 20px 20px 0 0;
+
+       padding: 10px;
+       overflow: auto;
+
        text-align: justify;
+   }
+
+   .wrapperSerie{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-bottom: 40px;
+
+        >span{
+            color: ${({theme})=>theme.COLORS.PINK_500};
+        }
    }
 
    @media (max-width: 670px){
         margin: 20px;
-
-        .wrapper_text{
-            background-color: ${({theme})=>theme.COLORS.BACKGROUND_100};
-            padding: 10px;
-            height: 580px;
-            overflow: auto;
-        }
    }
+`;
+
+export const Trash = styled.button`
+    border: none;
+    background: none;
+
+    > svg {
+        color: ${({theme})=> theme.COLORS.PINK_500};
+        font-size: 20px;
+    }
 `;

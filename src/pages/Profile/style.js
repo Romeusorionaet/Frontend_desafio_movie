@@ -12,8 +12,10 @@ export const Container = styled.div`
         padding-top: 65px;
         margin-left: 120px;
 
-        svg, a{
+        svg, button{
             color: ${({theme})=>theme.COLORS.PINK_500};
+            background: none;
+            border: none;
         }
     }
 
