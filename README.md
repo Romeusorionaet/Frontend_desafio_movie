@@ -13,7 +13,7 @@
 
 ![preview](./src/assets/preview2.png)
 
-[😊⭐⭐Clique aqui para acessar⭐⭐😊](https://rocket-movie.vercel.app)
+[😊⭐⭐Clique aqui para acessar⭐⭐😊](https://movienote.netlify.app)
 
 # Tecnologias utilizadas
 - HTML
