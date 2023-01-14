@@ -1,7 +1,6 @@
 import {FiPlus} from 'react-icons/fi';
 import {api} from '../../services/api';
 import {useState, useEffect} from 'react';
-import {GithubFilled, InstagramFilled, LinkedinFilled} from '@ant-design/icons';
 
 import {Container, Content, NewMovie, Section} from './style';
 
