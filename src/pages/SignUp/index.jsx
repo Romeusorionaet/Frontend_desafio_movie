@@ -1,11 +1,10 @@
+import {useState} from 'react';
 import {MailOutlined, LockOutlined, ArrowLeftOutlined, UserOutlined} from '@ant-design/icons'
 import {Link, useNavigate} from 'react-router-dom';
-import {useState} from 'react';
+import {Input} from '../../components/Input';
+import {Button} from '../../components/Button';
 
 import {api} from '../../services/api';
-
-import {Button} from '../../components/Button';
-import {Input} from '../../components/Input';
 
 import {Container, Form, Background} from './style';
 
