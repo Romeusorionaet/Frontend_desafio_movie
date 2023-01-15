@@ -43,7 +43,7 @@ export const Container = styled.header`
 `;
 
 export const Profile = styled.div`
-    width: 200px;
+    width: 150px;
     height: 68px;
 
     color: ${({theme})=>theme.COLORS.GRAY_500};
@@ -51,10 +51,12 @@ export const Profile = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 5px;
 
-    margin-right: 8vw;
+    margin-right: 5vw;
 
     >div{
+        margin-right: 5px;
         display: flex;
         flex-direction: column;
         align-items: end;
