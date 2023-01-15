@@ -52,22 +52,22 @@ export const Profile = styled.div`
     justify-content: center;
     align-items: center;
 
-    margin-right: 8vw;
+    margin-right: 5vw;
 
     >div{
-        min-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
 
         h2{
-            display: flex;
-            justify-content: end;
-            padding-right: 10px;
+            padding-right: 10px; 
             font-weight: 700;
             font-size: 14px;
             line-height: 18px;
             color: ${({theme})=>theme.COLORS.WHITE_500};
         }
         a{
-            margin-left: 80%;
+            padding-right: 10px;
             color: ${({theme})=>theme.COLORS.GRAY_500};
         }
     }

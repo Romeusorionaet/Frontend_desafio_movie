@@ -20,6 +20,10 @@ export function SignUp() {
             return alert("Preencha todos os campos!");
         }
 
+        if(name.length > 10 || name.length <3){
+            return alert("Nome deve ter no mínimo 3 caracteres ou no máximo 10 caracteres e não deve conter espaço.");
+        }
+
         if(email.includes('@gmail.com') === false){
             return alert(`"${email}" não é um email válido!`)
         }else if(password.length < 6){
@@ -49,7 +53,7 @@ export function SignUp() {
                 </div>
                 <h2>Crie sua conta</h2>
                 <Input 
-                    placeholder="Nome"
+                    placeholder="Primeiro nome"
                     type="text"
                     icon={UserOutlined}
                     onChange={e=>setName(e.target.value)}
