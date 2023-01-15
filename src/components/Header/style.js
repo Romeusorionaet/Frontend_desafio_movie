@@ -52,7 +52,7 @@ export const Profile = styled.div`
     justify-content: center;
     align-items: center;
 
-    margin-right: 5vw;
+    margin-right: 8vw;
 
     >div{
         display: flex;
