@@ -2,7 +2,10 @@
 
 > Página front-end com aplicação <strong>react.js</strong>
 
-![preview](./src/assets/preview1.png)
+![preview](./src/assets/previewDM.png)
+
+
+![preview](./src/assets/previewMM.png)
 
 > A ideia é mostrar notas de filmes ou serie que o usuário cadastre em uma lista, podendo ter:
 
